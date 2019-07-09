@@ -13,6 +13,10 @@
 		84AD5BF322D4C78A00999E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AD5BF222D4C78A00999E03 /* Assets.xcassets */; };
 		84AD5BF622D4C78A00999E03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AD5BF422D4C78A00999E03 /* LaunchScreen.storyboard */; };
 		84AD5BFE22D4C79D00999E03 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5BFD22D4C79D00999E03 /* Coordinator.swift */; };
+		84AD5C0022D4C8A700999E03 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5BFF22D4C8A700999E03 /* Storyboarded.swift */; };
+		84AD5C0222D4CA7000999E03 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C0122D4CA7000999E03 /* MainCoordinator.swift */; };
+		84AD5C0422D4CB5D00999E03 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C0322D4CB5D00999E03 /* BuyViewController.swift */; };
+		84AD5C0622D4CB6B00999E03 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C0522D4CB6B00999E03 /* CreateAccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		84AD5BF522D4C78A00999E03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84AD5BF722D4C78A00999E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84AD5BFD22D4C79D00999E03 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		84AD5BFF22D4C8A700999E03 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		84AD5C0122D4CA7000999E03 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		84AD5C0322D4CB5D00999E03 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
+		84AD5C0522D4CB6B00999E03 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,35 @@
 		84AD5BEA22D4C78900999E03 /* Coordinator Test */ = {
 			isa = PBXGroup;
 			children = (
+				84AD5C0822D4CDE900999E03 /* Model */,
+				84AD5C0722D4CDDA00999E03 /* Controllers */,
 				84AD5BEB22D4C78900999E03 /* AppDelegate.swift */,
-				84AD5BED22D4C78900999E03 /* ViewController.swift */,
 				84AD5BEF22D4C78900999E03 /* Main.storyboard */,
 				84AD5BF222D4C78A00999E03 /* Assets.xcassets */,
 				84AD5BF422D4C78A00999E03 /* LaunchScreen.storyboard */,
 				84AD5BF722D4C78A00999E03 /* Info.plist */,
 				84AD5BFD22D4C79D00999E03 /* Coordinator.swift */,
+				84AD5BFF22D4C8A700999E03 /* Storyboarded.swift */,
 			);
 			path = "Coordinator Test";
+			sourceTree = "<group>";
+		};
+		84AD5C0722D4CDDA00999E03 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84AD5C0322D4CB5D00999E03 /* BuyViewController.swift */,
+				84AD5C0522D4CB6B00999E03 /* CreateAccountViewController.swift */,
+				84AD5BED22D4C78900999E03 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84AD5C0822D4CDE900999E03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84AD5C0122D4CA7000999E03 /* MainCoordinator.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AD5C0622D4CB6B00999E03 /* CreateAccountViewController.swift in Sources */,
 				84AD5BEE22D4C78900999E03 /* ViewController.swift in Sources */,
 				84AD5BEC22D4C78900999E03 /* AppDelegate.swift in Sources */,
 				84AD5BFE22D4C79D00999E03 /* Coordinator.swift in Sources */,
+				84AD5C0222D4CA7000999E03 /* MainCoordinator.swift in Sources */,
+				84AD5C0022D4C8A700999E03 /* Storyboarded.swift in Sources */,
+				84AD5C0422D4CB5D00999E03 /* BuyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
