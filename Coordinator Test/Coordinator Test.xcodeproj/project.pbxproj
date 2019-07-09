@@ -17,6 +17,8 @@
 		84AD5C0222D4CA7000999E03 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C0122D4CA7000999E03 /* MainCoordinator.swift */; };
 		84AD5C0422D4CB5D00999E03 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C0322D4CB5D00999E03 /* BuyViewController.swift */; };
 		84AD5C0622D4CB6B00999E03 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C0522D4CB6B00999E03 /* CreateAccountViewController.swift */; };
+		84AD5C0F22D500EB00999E03 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C0E22D500EB00999E03 /* MainTabBarController.swift */; };
+		84AD5C1322D5027B00999E03 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C1222D5027B00999E03 /* SecondController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		84AD5C0122D4CA7000999E03 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		84AD5C0322D4CB5D00999E03 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		84AD5C0522D4CB6B00999E03 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		84AD5C0E22D500EB00999E03 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		84AD5C1222D5027B00999E03 /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				84AD5C0322D4CB5D00999E03 /* BuyViewController.swift */,
 				84AD5C0522D4CB6B00999E03 /* CreateAccountViewController.swift */,
 				84AD5BED22D4C78900999E03 /* ViewController.swift */,
+				84AD5C1222D5027B00999E03 /* SecondController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				84AD5C0122D4CA7000999E03 /* MainCoordinator.swift */,
+				84AD5C0E22D500EB00999E03 /* MainTabBarController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +174,8 @@
 			files = (
 				84AD5C0622D4CB6B00999E03 /* CreateAccountViewController.swift in Sources */,
 				84AD5BEE22D4C78900999E03 /* ViewController.swift in Sources */,
+				84AD5C0F22D500EB00999E03 /* MainTabBarController.swift in Sources */,
+				84AD5C1322D5027B00999E03 /* SecondController.swift in Sources */,
 				84AD5BEC22D4C78900999E03 /* AppDelegate.swift in Sources */,
 				84AD5BFE22D4C79D00999E03 /* Coordinator.swift in Sources */,
 				84AD5C0222D4CA7000999E03 /* MainCoordinator.swift in Sources */,
