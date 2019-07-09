@@ -8,8 +8,8 @@
 
 import UIKit
 
-class OpeningController: UINavigationController {
-    weak var coordinator: MainCoordinator?
+class OpeningController: UIViewController {
+    weak var coordinator: _MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
