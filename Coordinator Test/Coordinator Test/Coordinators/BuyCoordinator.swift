@@ -1,5 +1,5 @@
 //
-//  MainCoordinator.swift
+//  BuyCoordinator.swift
 //  Coordinator Test
 //
 //  Created by admin on 7/9/19.
@@ -8,30 +8,26 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+
+class BuyCoordinator: Coordinator {
+    
+    weak var parentCoordinator: MainCoordinator?
+    
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+
     
     func start(){
-        let vc = ViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
-    }
-    
-    
-    func buySubscription(){
         let vc = BuyViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func createAccount(){
-        let vc = CreateAccountViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+    func didFinishBuying(){
+        parentCoordinator?.childDidFinish(self)
     }
 }

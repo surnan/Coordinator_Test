@@ -8,7 +8,8 @@
 
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
+    //AnyObject === Class-Only & enable '===' between Coordinators
     var childCoordinators: [Coordinator] {get set}
     var navigationController: UINavigationController {get set}
     
