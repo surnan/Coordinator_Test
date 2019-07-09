@@ -17,6 +17,7 @@ class OpeningController: UIViewController {
     }
     
     @objc func pushToNextVC(){
-        navigationController?.pushViewController(MainTabBarController(), animated: true)
+        //navigationController?.pushViewController(MainTabBarController(), animated: true)
+        coordinator?.pushToTabController()
     }
 }

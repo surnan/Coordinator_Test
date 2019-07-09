@@ -22,27 +22,11 @@ class _MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
+    func pushToTabController(){
+        let child = MainCoordinator(navigationController: navigationController)
+        child.parentCoordinators = self
+        childCoordinators.append(child)
+        child.start()
+    }
 }
-    
-    
-    
-//    func start(){
-//        let vc = ViewController.instantiate()
-//        vc.coordinator = self
-//        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-//
-//        vc2.coordinator = self
-//        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
-//        navigationController.pushViewController(vc, animated: false)
-//    }
-//    func buySubscription(){
-//        let vc = BuyViewController.instantiate()
-//        vc.coordinator = self
-//        navigationController.pushViewController(vc, animated: true)
-//    }
-//
-//    func createAccount(){
-//        let vc = CreateAccountViewController.instantiate()
-//        vc.coordinator = self
-//        navigationController.pushViewController(vc, animated: true)
-//    }
+

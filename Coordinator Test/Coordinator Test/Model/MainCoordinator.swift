@@ -9,6 +9,7 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
+    weak var parentCoordinators : _MainCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
