@@ -10,7 +10,10 @@ import UIKit
 
 
 class SecondController: UIViewController {
+    weak var coordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .green
     }
 }

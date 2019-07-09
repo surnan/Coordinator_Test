@@ -86,8 +86,9 @@
 			children = (
 				84AD5C0322D4CB5D00999E03 /* BuyViewController.swift */,
 				84AD5C0522D4CB6B00999E03 /* CreateAccountViewController.swift */,
-				84AD5BED22D4C78900999E03 /* ViewController.swift */,
+				84AD5C0E22D500EB00999E03 /* MainTabBarController.swift */,
 				84AD5C1222D5027B00999E03 /* SecondController.swift */,
+				84AD5BED22D4C78900999E03 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -96,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				84AD5C0122D4CA7000999E03 /* MainCoordinator.swift */,
-				84AD5C0E22D500EB00999E03 /* MainTabBarController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

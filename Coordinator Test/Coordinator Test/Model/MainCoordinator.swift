@@ -12,6 +12,8 @@ class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
+    let vc2 = SecondController()
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -19,9 +21,11 @@ class MainCoordinator: Coordinator {
     func start(){
         let vc = ViewController.instantiate()
         vc.coordinator = self
-        
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         
+        //let vc2 = SecondController()
+        vc2.coordinator = self
+        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
         navigationController.pushViewController(vc, animated: false)
     }
     

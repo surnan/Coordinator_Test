@@ -14,7 +14,7 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         main.start()
-        viewControllers = [main.navigationController]
+        viewControllers = [main.navigationController, main.vc2]
     }
     
     
