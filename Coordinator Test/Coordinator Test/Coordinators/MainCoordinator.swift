@@ -66,5 +66,5 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate  {
         if let buyViewController = fromViewController as? BuyViewController {
             childDidFinish(buyViewController.coordinator)
         }
-    }
+    }  
 }
