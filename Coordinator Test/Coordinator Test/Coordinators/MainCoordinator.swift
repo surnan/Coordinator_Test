@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate  {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -38,6 +38,7 @@ class MainCoordinator: Coordinator {
     
     
     func start(){
+        navigationController.delegate = self
         let vc = ViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
@@ -47,5 +48,23 @@ class MainCoordinator: Coordinator {
         let vc = CreateAccountViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    //NavigationController - Delegate
+    //Navigation Back is tricky because it's not triggered by our Coordinator
+    func navigationController(_ navigationController: UINavigationController,
+                              didShow viewController: UIViewController,
+                              animated: Bool) {
+        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {return}
+        //Check if ViewController array already contains that ViewController.
+        //YES === pushing a different VC on top ... NO === popping VC
+        
+        //YES
+        if navigationController.viewControllers.contains(fromViewController){return}
+        
+        //NO
+        if let buyViewController = fromViewController as? BuyViewController {
+            childDidFinish(buyViewController.coordinator)
+        }
     }
 }
