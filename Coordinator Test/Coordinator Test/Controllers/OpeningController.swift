@@ -13,11 +13,11 @@ class OpeningController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .yellow
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "NEXT", style: .done, target: self, action: #selector(pushToNextVC))
     }
     
     @objc func pushToNextVC(){
-        //navigationController?.pushViewController(MainTabBarController(), animated: true)
         coordinator?.pushToTabController()
     }
 }

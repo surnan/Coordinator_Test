@@ -10,7 +10,7 @@ import UIKit
 
 
 class SecondController: UIViewController {
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MyTabCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()

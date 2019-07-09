@@ -9,9 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, Storyboarded {
-
-    weak var coordinator: MainCoordinator?
-    
+    weak var coordinator: MyTabCoordinator?
     
     @IBAction func buyTapped(_ sender: Any) {
         coordinator?.buySubscription()
@@ -23,7 +21,6 @@ class ViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
 

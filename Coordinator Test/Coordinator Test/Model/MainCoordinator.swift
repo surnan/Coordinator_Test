@@ -20,26 +20,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start(){
-        let vc = ViewController.instantiate()
-        vc.coordinator = self
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-        
-        //let vc2 = SecondController()
-        vc2.coordinator = self
-        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
-        navigationController.pushViewController(vc, animated: false)
-    }
-    
-    
-    func buySubscription(){
-        let vc = BuyViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func createAccount(){
-        let vc = CreateAccountViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let myTabController = MainTabBarController()
+        navigationController.pushViewController(myTabController, animated: true)
     }
 }

@@ -11,6 +11,6 @@ import UIKit
 import UIKit
 
 class CreateAccountViewController: UIViewController, Storyboarded {
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MyTabCoordinator?
 }
 
