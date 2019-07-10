@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coordinator?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        //window?.rootViewController = MainTabBarController()
-        window?.rootViewController = navController
+        window?.rootViewController = AnotherTabController()
+        //window?.rootViewController = navController
+        
         window?.makeKeyAndVisible()
         return true
     }

@@ -9,14 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController, Storyboarded {
-    weak var coordinator: ShowTabControllerCoordinator?
+    //weak var coordinator: ShowTabControllerCoordinator?
+    weak var coordinator: ViewControllerCoordinator?
     
     @IBAction func buyTapped(_ sender: Any) {
-        coordinator?.buySubscription()
+//        coordinator?.buySubscription()
     }
     
     @IBAction func createAccountTapped(_ sender: Any) {
-        coordinator?.createAccount()
+//        coordinator?.createAccount()
     }
     
     override func viewDidLoad() {

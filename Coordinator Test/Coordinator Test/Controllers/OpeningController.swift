@@ -18,6 +18,6 @@ class OpeningController: UIViewController {
     }
     
     @objc func pushToNextVC(){
-        coordinator?.pushToTabController()
+        coordinator?.pushOpenVC_ToSetupTabCoordinator()
     }
 }

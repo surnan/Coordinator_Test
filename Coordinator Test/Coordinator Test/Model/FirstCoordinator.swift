@@ -22,13 +22,21 @@ class FirstCoordinator: NSObject, UINavigationControllerDelegate, Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
-    
-    func pushToTabController(){
+
+    func pushOpenVC_ToSetupTabCoordinator(){
         let child = SetupTabCoordinator(navigationController: navigationController)
         child.parentCoordinators = self
         childCoordinators.append(child)
         child.start()
     }
+    
+    
+//    func pushOpenVC_ToSetupTabCoordinator(){
+//        let child = SetupTabCoordinator(navigationController: navigationController)
+//        child.parentCoordinators = self
+//        childCoordinators.append(child)
+//        child.start()
+//    }
     
     
     //Child Coordinator is done/complete/returned-to-parent
