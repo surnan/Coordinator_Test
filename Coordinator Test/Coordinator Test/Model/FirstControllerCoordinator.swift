@@ -22,7 +22,6 @@ class FirstControllerCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-
     
     func start() {
         let vc = FirstController.instantiate()
@@ -30,7 +29,6 @@ class FirstControllerCoordinator: Coordinator {
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         navigationController.pushViewController(vc, animated: false)
     }
-    
     
     func buySubscription(){
         let vc = BuyViewController.instantiate()
@@ -43,6 +41,5 @@ class FirstControllerCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
-    
 }
 

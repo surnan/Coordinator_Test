@@ -74,7 +74,6 @@
 		84AD5BEA22D4C78900999E03 /* Coordinator Test */ = {
 			isa = PBXGroup;
 			children = (
-				84EE59BC22D65C93004BD2E2 /* Junk */,
 				84AD5C0822D4CDE900999E03 /* Model */,
 				84AD5C0722D4CDDA00999E03 /* Controllers */,
 				84AD5BEB22D4C78900999E03 /* AppDelegate.swift */,
@@ -109,13 +108,6 @@
 				84EE59B822D64B7B004BD2E2 /* SecondControllerCoordinator.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		84EE59BC22D65C93004BD2E2 /* Junk */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Junk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

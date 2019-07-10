@@ -53,18 +53,13 @@ class OpeningControllerCoordinator: NSObject, UINavigationControllerDelegate, Co
             //Event = Push
             return
         }
-        
+    
         /*
-        //Event = Pop
+        //Event = Pop.  No child coordinators created in this app so far
         if let buyViewController = fromVC as? BuyViewController{
             childDidFinish(buyViewController.coordinator) //Verify VC to kill appropriate Coordinator
         }
         */
-        
-        
-        
-        
     }
-    
 }
 

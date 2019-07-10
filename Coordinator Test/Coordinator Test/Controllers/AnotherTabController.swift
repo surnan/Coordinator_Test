@@ -20,5 +20,10 @@ class AnotherTabController: UITabBarController{
         secondControllerCoord.start()
         viewControllers = [viewControllerCoord.navigationController, secondControllerCoord.navigationController]
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //navigationController?.isNavigationBarHidden = true
+    }
 }
 
