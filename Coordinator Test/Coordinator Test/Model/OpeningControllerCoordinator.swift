@@ -22,17 +22,15 @@ class OpeningControllerCoordinator: NSObject, UINavigationControllerDelegate, Co
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
-
+    
     func pushOpenVC_ToSetupTabCoordinator(){
-        //let child = AnotherTabController()
-        let child = AnotherTabController(navigationController: navigationController)
-        child.parentCoordinators = self
-        navigationController.pushViewController(child, animated: true)
+        let child = AnotherTabCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        child.start()
     }
     
-    
-    //Child Coordinator is done/complete/returned-to-parent
     func childDidFinish(_ child: Coordinator){
+        //Child Coordinator is done/complete/returned-to-parent
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === child {
                 childCoordinators.remove(at: index)
@@ -44,17 +42,13 @@ class OpeningControllerCoordinator: NSObject, UINavigationControllerDelegate, Co
     //MARK:- UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         guard let fromVC = navigationController.transitionCoordinator?.viewController(forKey: .from) else {return}
-        
-        
         //Checking if ViewController Array already contains from 'fromVC'
         //YES = PUSH, NO = POP
         //NavigationDelegate won't trigger for Present(vc, aniimated: true)
-        
         if navigationController.viewControllers.contains(fromVC) {
             //Event = Push
             return
         }
-    
         /*
         //Event = Pop.  No child coordinators created in this app so far
         if let buyViewController = fromVC as? BuyViewController{

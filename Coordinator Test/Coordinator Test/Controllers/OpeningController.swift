@@ -21,3 +21,4 @@ class OpeningController: UIViewController {
         coordinator?.pushOpenVC_ToSetupTabCoordinator()
     }
 }
+

@@ -13,20 +13,19 @@ class AnotherTabCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
-    
-    var viewControllerCoord = FirstControllerCoordinator(navigationController: UINavigationController())
-    var secondControllerCoord = SecondControllerCoordinator(navigationController: UINavigationController())
+    var firstCoordinator            = FirstControllerCoordinator(navigationController: UINavigationController())
+    var secondCoordinator           = SecondControllerCoordinator(navigationController: UINavigationController())
     
     init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+        self.navigationController   = navigationController
     }
 
     func start() {
         let vc = AnotherTabController()
-        vc.coordinator = self
-        vc.firstCoord = viewControllerCoord.start
-        vc.secondCoord = secondControllerCoord.start
-        vc.temp = [viewControllerCoord.navigationController, secondControllerCoord.navigationController]
+        vc.coordinatorOne   = firstCoordinator.start
+        vc.coordinatorTwo   = secondCoordinator.start
+        vc.tabControllers   = [firstCoordinator.navigationController, secondCoordinator.navigationController]
         navigationController.pushViewController(vc, animated: true)
     }
 }
+

@@ -23,6 +23,8 @@ class FirstControllerCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
+    
+    //MARK:- Handlers
     func buySubscription(){
         let vc = BuyViewController.instantiate()
         vc.coordinator = self
