@@ -9,7 +9,7 @@
 import UIKit
 
 class SetupTabCoordinator: Coordinator {
-    weak var parentCoordinators : FirstCoordinator?
+    weak var parentCoordinators : OpeningControllerCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     

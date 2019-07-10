@@ -10,7 +10,7 @@ import UIKit
 
 
 class AnotherTabController: UITabBarController{
-    weak var parentCoordinators : FirstCoordinator?
+    weak var parentCoordinators : OpeningControllerCoordinator?
     lazy var viewControllerCoord = ViewControllerCoordinator(navigationController: UINavigationController())
     lazy var secondControllerCoord = SecondControllerCoordinator(navigationController: UINavigationController())
 

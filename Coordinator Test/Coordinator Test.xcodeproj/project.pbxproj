@@ -20,7 +20,7 @@
 		84AD5C0F22D500EB00999E03 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C0E22D500EB00999E03 /* MainTabBarController.swift */; };
 		84AD5C1322D5027B00999E03 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C1222D5027B00999E03 /* SecondController.swift */; };
 		84AD5C1522D5049800999E03 /* OpeningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C1422D5049800999E03 /* OpeningController.swift */; };
-		84AD5C1722D505C000999E03 /* FirstCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C1622D505C000999E03 /* FirstCoordinator.swift */; };
+		84AD5C1722D505C000999E03 /* OpeningControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C1622D505C000999E03 /* OpeningControllerCoordinator.swift */; };
 		84EE59B522D54691004BD2E2 /* ShowTabControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE59B422D54691004BD2E2 /* ShowTabControllerCoordinator.swift */; };
 		84EE59B722D64A3B004BD2E2 /* AnotherTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE59B622D64A3B004BD2E2 /* AnotherTabController.swift */; };
 		84EE59B922D64B7B004BD2E2 /* SecondControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE59B822D64B7B004BD2E2 /* SecondControllerCoordinator.swift */; };
@@ -43,7 +43,7 @@
 		84AD5C0E22D500EB00999E03 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		84AD5C1222D5027B00999E03 /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 		84AD5C1422D5049800999E03 /* OpeningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningController.swift; sourceTree = "<group>"; };
-		84AD5C1622D505C000999E03 /* FirstCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCoordinator.swift; sourceTree = "<group>"; };
+		84AD5C1622D505C000999E03 /* OpeningControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningControllerCoordinator.swift; sourceTree = "<group>"; };
 		84EE59B422D54691004BD2E2 /* ShowTabControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTabControllerCoordinator.swift; sourceTree = "<group>"; };
 		84EE59B622D64A3B004BD2E2 /* AnotherTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherTabController.swift; sourceTree = "<group>"; };
 		84EE59B822D64B7B004BD2E2 /* SecondControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondControllerCoordinator.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		84AD5C0822D4CDE900999E03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				84AD5C1622D505C000999E03 /* FirstCoordinator.swift */,
+				84AD5C1622D505C000999E03 /* OpeningControllerCoordinator.swift */,
 				84AD5C0122D4CA7000999E03 /* SetupTabCoordinator.swift */,
 				84EE59B422D54691004BD2E2 /* ShowTabControllerCoordinator.swift */,
 				84EE59B822D64B7B004BD2E2 /* SecondControllerCoordinator.swift */,
@@ -191,7 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AD5C0622D4CB6B00999E03 /* CreateAccountViewController.swift in Sources */,
-				84AD5C1722D505C000999E03 /* FirstCoordinator.swift in Sources */,
+				84AD5C1722D505C000999E03 /* OpeningControllerCoordinator.swift in Sources */,
 				84AD5BEE22D4C78900999E03 /* ViewController.swift in Sources */,
 				84AD5C0F22D500EB00999E03 /* MainTabBarController.swift in Sources */,
 				84AD5C1322D5027B00999E03 /* SecondController.swift in Sources */,

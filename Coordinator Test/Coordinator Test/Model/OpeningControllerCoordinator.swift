@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstCoordinator: NSObject, UINavigationControllerDelegate, Coordinator {
+class OpeningControllerCoordinator: NSObject, UINavigationControllerDelegate, Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -24,19 +24,10 @@ class FirstCoordinator: NSObject, UINavigationControllerDelegate, Coordinator {
     }
 
     func pushOpenVC_ToSetupTabCoordinator(){
-        let child = SetupTabCoordinator(navigationController: navigationController)
+        let child = AnotherTabController()
         child.parentCoordinators = self
-        childCoordinators.append(child)
-        child.start()
+        navigationController.pushViewController(child, animated: true)
     }
-    
-    
-//    func pushOpenVC_ToSetupTabCoordinator(){
-//        let child = SetupTabCoordinator(navigationController: navigationController)
-//        child.parentCoordinators = self
-//        childCoordinators.append(child)
-//        child.start()
-//    }
     
     
     //Child Coordinator is done/complete/returned-to-parent
