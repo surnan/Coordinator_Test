@@ -11,7 +11,7 @@ import UIKit
 
 class AnotherTabController: UITabBarController{
     weak var parentCoordinators : OpeningControllerCoordinator?
-    lazy var viewControllerCoord = ViewControllerCoordinator(navigationController: UINavigationController())
+    lazy var viewControllerCoord = FirstControllerCoordinator(navigationController: UINavigationController())
     lazy var secondControllerCoord = SecondControllerCoordinator(navigationController: UINavigationController())
 
     override func viewDidLoad() {

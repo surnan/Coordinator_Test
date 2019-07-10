@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="2483" y="4"/>
         </scene>
-        <!--View Controller-->
+        <!--First Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Coordinator_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstController" id="BYZ-38-t0r" customClass="FirstController" customModule="Coordinator_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

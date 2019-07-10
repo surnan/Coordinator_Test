@@ -15,9 +15,8 @@
 
 import UIKit
 
-class ViewControllerCoordinator: Coordinator {
+class FirstControllerCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
-    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -26,10 +25,23 @@ class ViewControllerCoordinator: Coordinator {
 
     
     func start() {
-        let vc = ViewController.instantiate()
+        let vc = FirstController.instantiate()
         vc.coordinator = self
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    
+    func buySubscription(){
+        let vc = BuyViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func createAccount(){
+        let vc = CreateAccountViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
     }
     
 }

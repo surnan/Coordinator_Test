@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, Storyboarded {
+class FirstController: UIViewController, Storyboarded {
     //weak var coordinator: ShowTabControllerCoordinator?
-    weak var coordinator: ViewControllerCoordinator?
+    weak var coordinator: FirstControllerCoordinator?
     
     @IBAction func buyTapped(_ sender: Any) {
-//        coordinator?.buySubscription()
+        coordinator?.buySubscription()
     }
     
     @IBAction func createAccountTapped(_ sender: Any) {
-//        coordinator?.createAccount()
+        coordinator?.createAccount()
     }
     
     override func viewDidLoad() {
