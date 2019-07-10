@@ -10,8 +10,6 @@ import UIKit
 
 
 class SecondController: UIViewController {
-    //weak var coordinator: ShowTabControllerCoordinator?
-    
     weak var coordinator: SecondControllerCoordinator?
     
     

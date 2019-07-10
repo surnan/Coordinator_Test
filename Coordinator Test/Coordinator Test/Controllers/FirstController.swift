@@ -9,7 +9,6 @@
 import UIKit
 
 class FirstController: UIViewController, Storyboarded {
-    //weak var coordinator: ShowTabControllerCoordinator?
     weak var coordinator: FirstControllerCoordinator?
     
     @IBAction func buyTapped(_ sender: Any) {
