@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, Storyboarded {
-    weak var coordinator: MyTabCoordinator?
+    weak var coordinator: ShowTabControllerCoordinator?
     
     @IBAction func buyTapped(_ sender: Any) {
         coordinator?.buySubscription()

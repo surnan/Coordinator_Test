@@ -9,5 +9,5 @@
 import UIKit
 
 class BuyViewController: UIViewController, Storyboarded {
-    weak var coordinator: MyTabCoordinator?
+    weak var coordinator: ShowTabControllerCoordinator?
 }

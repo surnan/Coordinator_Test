@@ -9,7 +9,7 @@
 import UIKit
 
 class OpeningController: UIViewController {
-    weak var coordinator: _MainCoordinator?
+    weak var coordinator: FirstCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()

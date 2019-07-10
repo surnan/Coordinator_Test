@@ -8,12 +8,10 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
-    weak var parentCoordinators : _MainCoordinator?
+class SetupTabCoordinator: Coordinator {
+    weak var parentCoordinators : FirstCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-    
-    let vc2 = SecondController()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class MyTabCoordinator: Coordinator {
+class ShowTabControllerCoordinator: Coordinator {
+    weak var parentCoordinators : SetupTabCoordinator?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -24,7 +25,8 @@ class MyTabCoordinator: Coordinator {
         vc.coordinator = self
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         
-        //let vc2 = SecondController()
+        //let vc2 = SecondController() //ERROR: viewControllers = [main.navigationController, main.vc2]
+        
         vc2.coordinator = self
         vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
         navigationController.pushViewController(vc, animated: false)

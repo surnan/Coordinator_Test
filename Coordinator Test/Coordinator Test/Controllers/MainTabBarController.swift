@@ -9,7 +9,7 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-    let main = MyTabCoordinator(navigationController: UINavigationController())
+    let main = ShowTabControllerCoordinator(navigationController: UINavigationController())
     
     override func viewDidLoad() {
         super.viewDidLoad()
