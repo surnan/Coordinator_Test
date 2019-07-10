@@ -6,13 +6,6 @@
 //  Copyright © 2019 admin. All rights reserved.
 //
 
-//func start(){
-//    navigationController.delegate = self
-//    let vc = OpeningController()
-//    vc.coordinator = self
-//    navigationController.pushViewController(vc, animated: false)
-//}
-
 import UIKit
 
 class FirstControllerCoordinator: Coordinator {

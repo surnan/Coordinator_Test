@@ -10,7 +10,6 @@ import UIKit
 
 class SecondControllerCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
-    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -23,5 +22,4 @@ class SecondControllerCoordinator: Coordinator {
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
         navigationController.pushViewController(vc, animated: false)
     }
-    
 }
