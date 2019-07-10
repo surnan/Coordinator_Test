@@ -25,26 +25,18 @@ class BuyViewController: UIViewController, Storyboarded {
         navigationController?.popViewController(animated: true)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "JIJIJ", style: .done, target: self, action: #selector(handleBack))
-        
-
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "JIJIJ", style: .done, target: self, action: #selector(handleBack))
         view.addSubview(myButton)
         NSLayoutConstraint.activate([
             myButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             ])
-        
         print("First Controller Triggered")
-        
-        
     }
     
     @objc func handleBack(){
         navigationController?.popViewController(animated: true)
     }
-    
-    
 }
