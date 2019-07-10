@@ -13,7 +13,18 @@ class AnotherTabController: UITabBarController{
     weak var parentCoordinators : OpeningControllerCoordinator?
     lazy var viewControllerCoord = FirstControllerCoordinator(navigationController: UINavigationController())
     lazy var secondControllerCoord = SecondControllerCoordinator(navigationController: UINavigationController())
-
+    
+    var tempNavigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.tempNavigationController = navigationController
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllerCoord.start()

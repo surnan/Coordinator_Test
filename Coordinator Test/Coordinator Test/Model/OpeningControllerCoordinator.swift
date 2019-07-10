@@ -24,7 +24,8 @@ class OpeningControllerCoordinator: NSObject, UINavigationControllerDelegate, Co
     }
 
     func pushOpenVC_ToSetupTabCoordinator(){
-        let child = AnotherTabController()
+        //let child = AnotherTabController()
+        let child = AnotherTabController(navigationController: navigationController)
         child.parentCoordinators = self
         navigationController.pushViewController(child, animated: true)
     }
