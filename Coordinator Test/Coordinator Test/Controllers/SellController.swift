@@ -1,33 +1,34 @@
 //
-//  BuyViewController.swift
+//  SellController.swift
 //  Coordinator Test
 //
-//  Created by admin on 7/9/19.
+//  Created by admin on 7/10/19.
 //  Copyright © 2019 admin. All rights reserved.
 //
 
 import UIKit
 
-class BuyViewController: UIViewController, Storyboarded {
-    weak var coordinator: BuyCoordinator?
+class SellController: UIViewController{
+    weak var coordinator: SellCoordinator?
     
     var myButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)
-        button.setTitle("--FORWARDS--", for: .normal)
+        button.setTitle("--  POP BACK  --", for: .normal)
         button.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    
     @objc func handleButton(){
-        coordinator?.pushForward()
+        coordinator?.popBackwards()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .purple
+        
         view.addSubview(myButton)
         
         NSLayoutConstraint.activate([
@@ -35,5 +36,5 @@ class BuyViewController: UIViewController, Storyboarded {
             myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             ])
         
-    } 
+    }
 }

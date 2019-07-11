@@ -1,16 +1,17 @@
 //
-//  BuyCoordinator.swift
+//  AnotherBuyCoordinator.swift
 //  Coordinator Test
 //
-//  Created by admin on 7/9/19.
+//  Created by admin on 7/10/19.
 //  Copyright © 2019 admin. All rights reserved.
 //
 
 import UIKit
 
 
-class BuyCoordinator: Coordinator {
+class AnotherBuyCoordinator: Coordinator {
     weak var parentCoordinator: MainCoordinator?
+    
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -18,15 +19,8 @@ class BuyCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    func pushForward(){
-        let child = SellCoordinator(navigationController: navigationController)
-        child.parentCoordinator = self
-        childCoordinators.append(child)
-        child.start()
-    }
-    
     func start(){
-        let vc = BuyViewController.instantiate()
+        let vc = AnotherBuyVC()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

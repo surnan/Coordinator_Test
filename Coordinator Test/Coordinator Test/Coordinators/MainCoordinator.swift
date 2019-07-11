@@ -29,7 +29,7 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate  {
     
     
     
-    func buySubscription(){
+    func handleBuyButton(){
         let child = BuyCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
