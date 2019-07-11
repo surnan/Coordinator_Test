@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		840B18BD22D695610058725D /* AnotherTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B18BC22D695610058725D /* AnotherTabCoordinator.swift */; };
-		840B18CF22D789BD0058725D /* BuyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B18CE22D789BD0058725D /* BuyCoordinator.swift */; };
 		84AD5BEC22D4C78900999E03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5BEB22D4C78900999E03 /* AppDelegate.swift */; };
 		84AD5BEE22D4C78900999E03 /* FirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5BED22D4C78900999E03 /* FirstController.swift */; };
 		84AD5BF322D4C78A00999E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AD5BF222D4C78A00999E03 /* Assets.xcassets */; };
@@ -18,18 +16,13 @@
 		84AD5C0622D4CB6B00999E03 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C0522D4CB6B00999E03 /* CreateViewController.swift */; };
 		84AD5C1322D5027B00999E03 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C1222D5027B00999E03 /* SecondController.swift */; };
 		84AD5C1522D5049800999E03 /* OpeningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C1422D5049800999E03 /* OpeningController.swift */; };
-		84AD5C1722D505C000999E03 /* OpeningControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5C1622D505C000999E03 /* OpeningControllerCoordinator.swift */; };
 		84EE59B722D64A3B004BD2E2 /* AnotherTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE59B622D64A3B004BD2E2 /* AnotherTabController.swift */; };
-		84EE59B922D64B7B004BD2E2 /* SecondControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE59B822D64B7B004BD2E2 /* SecondControllerCoordinator.swift */; };
-		84EE59BB22D64B87004BD2E2 /* FirstControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE59BA22D64B87004BD2E2 /* FirstControllerCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		840B18BC22D695610058725D /* AnotherTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherTabCoordinator.swift; sourceTree = "<group>"; };
-		840B18CE22D789BD0058725D /* BuyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoordinator.swift; sourceTree = "<group>"; };
 		84AD5BE822D4C78900999E03 /* Coordinator Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coordinator Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AD5BEB22D4C78900999E03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84AD5BED22D4C78900999E03 /* FirstController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstController.swift; sourceTree = "<group>"; };
+		84AD5BED22D4C78900999E03 /* FirstController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		84AD5BF222D4C78A00999E03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84AD5BF522D4C78A00999E03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84AD5BF722D4C78A00999E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,10 +31,7 @@
 		84AD5C0522D4CB6B00999E03 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		84AD5C1222D5027B00999E03 /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		84AD5C1422D5049800999E03 /* OpeningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningController.swift; sourceTree = "<group>"; };
-		84AD5C1622D505C000999E03 /* OpeningControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningControllerCoordinator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		84EE59B622D64A3B004BD2E2 /* AnotherTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherTabController.swift; sourceTree = "<group>"; };
-		84EE59B822D64B7B004BD2E2 /* SecondControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondControllerCoordinator.swift; sourceTree = "<group>"; };
-		84EE59BA22D64B87004BD2E2 /* FirstControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstControllerCoordinator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +64,6 @@
 		84AD5BEA22D4C78900999E03 /* Coordinator Test */ = {
 			isa = PBXGroup;
 			children = (
-				84AD5C0822D4CDE900999E03 /* Model */,
 				84AD5C0722D4CDDA00999E03 /* Controllers */,
 				84AD5BEB22D4C78900999E03 /* AppDelegate.swift */,
 				84AD5BF222D4C78A00999E03 /* Assets.xcassets */,
@@ -88,26 +77,14 @@
 		84AD5C0722D4CDDA00999E03 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				84EE59B622D64A3B004BD2E2 /* AnotherTabController.swift */,
 				84AD5C1422D5049800999E03 /* OpeningController.swift */,
+				84EE59B622D64A3B004BD2E2 /* AnotherTabController.swift */,
 				84AD5BED22D4C78900999E03 /* FirstController.swift */,
 				84AD5C1222D5027B00999E03 /* SecondController.swift */,
 				84AD5C0322D4CB5D00999E03 /* BuyViewController.swift */,
 				84AD5C0522D4CB6B00999E03 /* CreateViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		84AD5C0822D4CDE900999E03 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				84AD5C1622D505C000999E03 /* OpeningControllerCoordinator.swift */,
-				840B18BC22D695610058725D /* AnotherTabCoordinator.swift */,
-				84EE59BA22D64B87004BD2E2 /* FirstControllerCoordinator.swift */,
-				84EE59B822D64B7B004BD2E2 /* SecondControllerCoordinator.swift */,
-				840B18CE22D789BD0058725D /* BuyCoordinator.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,18 +158,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AD5C0622D4CB6B00999E03 /* CreateViewController.swift in Sources */,
-				84AD5C1722D505C000999E03 /* OpeningControllerCoordinator.swift in Sources */,
 				84AD5BEE22D4C78900999E03 /* FirstController.swift in Sources */,
 				84AD5C1322D5027B00999E03 /* SecondController.swift in Sources */,
 				84AD5C1522D5049800999E03 /* OpeningController.swift in Sources */,
-				840B18BD22D695610058725D /* AnotherTabCoordinator.swift in Sources */,
 				84EE59B722D64A3B004BD2E2 /* AnotherTabController.swift in Sources */,
 				84AD5BEC22D4C78900999E03 /* AppDelegate.swift in Sources */,
 				84AD5BFE22D4C79D00999E03 /* Coordinator.swift in Sources */,
-				84EE59BB22D64B87004BD2E2 /* FirstControllerCoordinator.swift in Sources */,
-				840B18CF22D789BD0058725D /* BuyCoordinator.swift in Sources */,
 				84AD5C0422D4CB5D00999E03 /* BuyViewController.swift in Sources */,
-				84EE59B922D64B7B004BD2E2 /* SecondControllerCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

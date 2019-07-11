@@ -7,33 +7,45 @@
 //
 
 import UIKit
+class FirstControllerCoordinator: Coordinator {
+    var childCoordinators = [Coordinator]()
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func start() {
+        let vc = FirstController()
+        vc.coordinator = self
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    
+    //MARK:- Handlers
+    func handleBuy(){
+        let child =  BuyCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    func handleCreate(){
+        let child = CreateCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+    }
+}
+
 
 class FirstController: UIViewController{
     weak var coordinator: FirstControllerCoordinator?
-    
     enum ButtonTags: Int {case buy = 0, create}
- 
-    lazy var buyButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("BUY", for: .normal)
-        button.backgroundColor = .blue
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(handleBuyButton(sender:)), for: .touchUpInside)
-        button.tag = ButtonTags.buy.rawValue
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    lazy var createButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("CREATE", for: .normal)
-        button.backgroundColor = .blue
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(handleBuyButton(sender:)), for: .touchUpInside)
-        button.tag = ButtonTags.create.rawValue
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+
+    var buyButton = GenericButton(title: "BUY", tab: ButtonTags.buy.rawValue)
+    var createButton = GenericButton(title: "CREATE", tab: ButtonTags.create.rawValue)
     
     @objc func handleBuyButton(sender: UIButton){
         switch sender.tag {
@@ -49,7 +61,10 @@ class FirstController: UIViewController{
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        [buyButton, createButton].forEach{view.addSubview($0)}
+        [buyButton, createButton].forEach{
+            $0.addTarget(self, action: #selector(handleBuyButton(sender:)), for: .touchUpInside)
+            view.addSubview($0)
+        }
         
         let safe = view.safeAreaLayoutGuide
         
@@ -68,3 +83,12 @@ class FirstController: UIViewController{
     }
 }
 
+func GenericButton(title: String, tab: Int)->UIButton{
+    let button = UIButton()
+    button.setTitle(title, for: .normal)
+    button.backgroundColor = .blue
+    button.setTitleColor(.white, for: .normal)
+    button.tag = tab
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+}
