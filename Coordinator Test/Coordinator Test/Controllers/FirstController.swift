@@ -11,21 +11,8 @@ import UIKit
 class FirstController: UIViewController{
     weak var coordinator: FirstControllerCoordinator?
     
-    
-    enum ButtonTags: Int {
-        case buy = 0, create
-    }
-    
-    
-    @IBAction func buyTapped(_ sender: Any) {
-        coordinator?.buySubscription()
-    }
-    
-    @IBAction func createAccountTapped(_ sender: Any) {
-        coordinator?.createAccount()
-    }
-    
-    
+    enum ButtonTags: Int {case buy = 0, create}
+ 
     lazy var buyButton: UIButton = {
         let button = UIButton()
         button.setTitle("BUY", for: .normal)
@@ -51,9 +38,9 @@ class FirstController: UIViewController{
     @objc func handleBuyButton(sender: UIButton){
         switch sender.tag {
         case ButtonTags.buy.rawValue:
-            print("")
+            coordinator?.handleBuy()
         case ButtonTags.create.rawValue:
-            print("")
+            coordinator?.handleCreate()
         default:
             print("error")
         }
@@ -77,6 +64,7 @@ class FirstController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
     }
 }
 

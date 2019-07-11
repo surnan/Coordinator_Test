@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		840B18BD22D695610058725D /* AnotherTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B18BC22D695610058725D /* AnotherTabCoordinator.swift */; };
+		840B18CF22D789BD0058725D /* BuyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B18CE22D789BD0058725D /* BuyCoordinator.swift */; };
 		84AD5BEC22D4C78900999E03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5BEB22D4C78900999E03 /* AppDelegate.swift */; };
 		84AD5BEE22D4C78900999E03 /* FirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5BED22D4C78900999E03 /* FirstController.swift */; };
 		84AD5BF122D4C78900999E03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AD5BEF22D4C78900999E03 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		840B18BC22D695610058725D /* AnotherTabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherTabCoordinator.swift; sourceTree = "<group>"; };
+		840B18CE22D789BD0058725D /* BuyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoordinator.swift; sourceTree = "<group>"; };
 		84AD5BE822D4C78900999E03 /* Coordinator Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coordinator Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AD5BEB22D4C78900999E03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84AD5BED22D4C78900999E03 /* FirstController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				840B18BC22D695610058725D /* AnotherTabCoordinator.swift */,
 				84EE59BA22D64B87004BD2E2 /* FirstControllerCoordinator.swift */,
 				84EE59B822D64B7B004BD2E2 /* SecondControllerCoordinator.swift */,
+				840B18CE22D789BD0058725D /* BuyCoordinator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				84AD5BFE22D4C79D00999E03 /* Coordinator.swift in Sources */,
 				84EE59BB22D64B87004BD2E2 /* FirstControllerCoordinator.swift in Sources */,
 				84AD5C0022D4C8A700999E03 /* Storyboarded.swift in Sources */,
+				840B18CF22D789BD0058725D /* BuyCoordinator.swift in Sources */,
 				84AD5C0422D4CB5D00999E03 /* BuyViewController.swift in Sources */,
 				84EE59B922D64B7B004BD2E2 /* SecondControllerCoordinator.swift in Sources */,
 			);

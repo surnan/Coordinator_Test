@@ -25,13 +25,14 @@ class FirstControllerCoordinator: Coordinator {
     
     
     //MARK:- Handlers
-    func buySubscription(){
-        let vc = BuyViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+    func handleBuy(){
+        let child =  BuyCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
     }
     
-    func createAccount(){
+    func handleCreate(){
         let vc = CreateAccountViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)

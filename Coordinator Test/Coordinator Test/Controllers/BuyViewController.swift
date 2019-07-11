@@ -8,8 +8,8 @@
 
 import UIKit
 
-class BuyViewController: UIViewController, Storyboarded {
-    weak var coordinator: FirstControllerCoordinator?
+class BuyViewController: UIViewController{
+    weak var coordinator: BuyCoordinator?
     
     var myButton: UIButton = {
         let button = UIButton()
