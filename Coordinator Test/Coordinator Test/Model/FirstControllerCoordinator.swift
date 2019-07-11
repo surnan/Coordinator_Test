@@ -17,7 +17,7 @@ class FirstControllerCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = FirstController.instantiate()
+        let vc = FirstController()
         vc.coordinator = self
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         navigationController.pushViewController(vc, animated: false)
