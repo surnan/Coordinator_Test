@@ -5,11 +5,12 @@
 //  Created by admin on 7/9/19.
 //  Copyright © 2019 admin. All rights reserved.
 //
-
 import UIKit
-class FirstControllerCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
-    var navigationController: UINavigationController
+
+class FirstCoordinator: Coordinator {
+    weak var parentCoordinator      : Coordinator?
+    var navigationController        : UINavigationController
+    var childCoordinators           = [Coordinator]()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -41,7 +42,7 @@ class FirstControllerCoordinator: Coordinator {
 
 
 class FirstController: UIViewController{
-    weak var coordinator: FirstControllerCoordinator?
+    weak var coordinator: FirstCoordinator?
     enum ButtonTags: Int {case buy = 0, create}
 
     var buyButton = GenericButton(title: "BUY", tab: ButtonTags.buy.rawValue)

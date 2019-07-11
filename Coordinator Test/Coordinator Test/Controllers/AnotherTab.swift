@@ -9,19 +9,27 @@
 import UIKit
 
 class AnotherTabCoordinator: Coordinator {
-    weak var parentCoordinator: Coordinator?
-    var childCoordinators = [Coordinator]()
-    var navigationController: UINavigationController
+    weak var parentCoordinator      : Coordinator?
+    var navigationController        : UINavigationController
+    var childCoordinators           = [Coordinator]()
     
-    var firstCoordinator            = FirstControllerCoordinator(navigationController: UINavigationController())
-    var secondCoordinator           = SecondControllerCoordinator(navigationController: UINavigationController())
+    var firstCoordinator            = FirstCoordinator(navigationController: UINavigationController())
+    var secondCoordinator           = SecondCoordinator(navigationController: UINavigationController())
     
     init(navigationController: UINavigationController) {
         self.navigationController   = navigationController
     }
     
     func start() {
-        let vc = AnotherTabController()
+        firstCoordinator.parentCoordinator  = self
+        secondCoordinator.parentCoordinator = self
+        
+        childCoordinators.append(firstCoordinator)
+        childCoordinators.append(secondCoordinator)
+        
+        
+        let vc              = AnotherTabController()
+        vc.coordinator      = self
         vc.coordinatorOne   = firstCoordinator.start
         vc.coordinatorTwo   = secondCoordinator.start
         vc.tabControllers   = [firstCoordinator.navigationController, secondCoordinator.navigationController]
@@ -30,8 +38,7 @@ class AnotherTabCoordinator: Coordinator {
 }
 
 class AnotherTabController: UITabBarController{
-    weak var parentCoordinators : OpeningControllerCoordinator?
-
+    var coordinator             : AnotherTabCoordinator?
     var coordinatorOne          : (()-> Void)?
     var coordinatorTwo          : (()-> Void)?
     var tabControllers          : [UIViewController]?

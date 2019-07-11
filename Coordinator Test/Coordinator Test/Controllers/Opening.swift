@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OpeningControllerCoordinator: NSObject, UINavigationControllerDelegate, Coordinator {
+class OpeningCoordinator: NSObject, UINavigationControllerDelegate, Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -26,6 +26,7 @@ class OpeningControllerCoordinator: NSObject, UINavigationControllerDelegate, Co
     func pushOpenVC_ToSetupTabCoordinator(){
         let child = AnotherTabCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
+        childCoordinators.append(child)
         child.start()
     }
     
@@ -51,7 +52,7 @@ class OpeningControllerCoordinator: NSObject, UINavigationControllerDelegate, Co
 }
 
 class OpeningController: UIViewController {
-    weak var coordinator: OpeningControllerCoordinator?
+    weak var coordinator: OpeningCoordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow

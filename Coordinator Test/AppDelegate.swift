@@ -11,11 +11,11 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var coordinator: OpeningControllerCoordinator?
+    var coordinator: OpeningCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let navController = UINavigationController()
-        coordinator = OpeningControllerCoordinator(navigationController: navController)
+        coordinator = OpeningCoordinator(navigationController: navController)
         coordinator?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController

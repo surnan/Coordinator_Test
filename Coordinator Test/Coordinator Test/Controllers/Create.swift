@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 class CreateCoordinator: Coordinator {
     weak var parentCoordinator: Coordinator?
     var childCoordinators = [Coordinator]()
