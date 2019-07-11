@@ -37,6 +37,11 @@ class CreateViewController: UIViewController{
         return label
     }()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("Create ViewController")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(myLabel)

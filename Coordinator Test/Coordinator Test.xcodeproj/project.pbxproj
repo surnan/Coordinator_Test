@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844740CE22D7CC8000B09D31 /* Final.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844740CD22D7CC8000B09D31 /* Final.swift */; };
 		84AD5BEC22D4C78900999E03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5BEB22D4C78900999E03 /* AppDelegate.swift */; };
 		84AD5BEE22D4C78900999E03 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD5BED22D4C78900999E03 /* First.swift */; };
 		84AD5BF322D4C78A00999E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AD5BF222D4C78A00999E03 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		844740CD22D7CC8000B09D31 /* Final.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final.swift; sourceTree = "<group>"; };
 		84AD5BE822D4C78900999E03 /* Coordinator Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coordinator Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AD5BEB22D4C78900999E03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84AD5BED22D4C78900999E03 /* First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -83,6 +85,7 @@
 				84AD5C1222D5027B00999E03 /* Second.swift */,
 				84AD5C0322D4CB5D00999E03 /* Buy.swift */,
 				84AD5C0522D4CB6B00999E03 /* Create.swift */,
+				844740CD22D7CC8000B09D31 /* Final.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844740CE22D7CC8000B09D31 /* Final.swift in Sources */,
 				84AD5C0622D4CB6B00999E03 /* Create.swift in Sources */,
 				84AD5BEE22D4C78900999E03 /* First.swift in Sources */,
 				84AD5C1322D5027B00999E03 /* Second.swift in Sources */,

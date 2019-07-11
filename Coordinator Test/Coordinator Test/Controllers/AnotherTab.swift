@@ -35,6 +35,16 @@ class AnotherTabCoordinator: Coordinator {
         vc.tabControllers   = [firstCoordinator.navigationController, secondCoordinator.navigationController]
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func childDidFinish(_ child: Coordinator){
+        //Child Coordinator is returned to parent
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === child {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
+    }
 }
 
 class AnotherTabController: UITabBarController{
@@ -48,10 +58,7 @@ class AnotherTabController: UITabBarController{
         coordinatorOne?()
         coordinatorTwo?()
         viewControllers = tabControllers
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        print("AnotherTAB ViewController")
     }
 }
 

@@ -23,7 +23,6 @@ class FirstCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    
     //MARK:- Handlers
     func handleBuy(){
         let child =  BuyCoordinator(navigationController: navigationController)
@@ -43,14 +42,14 @@ class FirstCoordinator: Coordinator {
 
 class FirstController: UIViewController{
     weak var coordinator: FirstCoordinator?
-    enum ButtonTags: Int {case buy = 0, create}
+    enum ButtonTags: Int {case back = 0, create}
 
-    var buyButton = GenericButton(title: "BUY", tab: ButtonTags.buy.rawValue)
+    var buyButton = GenericButton(title: "BUY", tab: ButtonTags.back.rawValue)
     var createButton = GenericButton(title: "CREATE", tab: ButtonTags.create.rawValue)
     
-    @objc func handleBuyButton(sender: UIButton){
+    @objc func handleAllButton(sender: UIButton){
         switch sender.tag {
-        case ButtonTags.buy.rawValue:
+        case ButtonTags.back.rawValue:
             coordinator?.handleBuy()
         case ButtonTags.create.rawValue:
             coordinator?.handleCreate()
@@ -58,29 +57,26 @@ class FirstController: UIViewController{
             print("error")
         }
     }
-    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         [buyButton, createButton].forEach{
-            $0.addTarget(self, action: #selector(handleBuyButton(sender:)), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(handleAllButton(sender:)), for: .touchUpInside)
             view.addSubview($0)
         }
-        
         let safe = view.safeAreaLayoutGuide
-        
         NSLayoutConstraint.activate([
             buyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             createButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             buyButton.topAnchor.constraint(equalTo: safe.topAnchor, constant: 30),
             createButton.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: 30),
             ])
-    }
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         view.backgroundColor = .white
+        print("FIRST ViewController")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
 }
 

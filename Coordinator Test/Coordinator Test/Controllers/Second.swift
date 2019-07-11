@@ -5,22 +5,6 @@
 //  Created by admin on 7/9/19.
 //  Copyright © 2019 admin. All rights reserved.
 //
-
-//func start(){
-//    weak var parentCoordinator      : Coordinator?
-//    navigationController.delegate = self
-//    let vc = OpeningController()
-//    vc.coordinator = self
-//    navigationController.pushViewController(vc, animated: false)
-//}
-
-//func pushOpenVC_ToSetupTabCoordinator(){
-//    let child = AnotherTabCoordinator(navigationController: navigationController)
-//    child.parentCoordinator = self
-//    childCoordinators.append(child)
-//    child.start()
-//}
-
 import UIKit
 
 class SecondCoordinator: Coordinator {
@@ -46,4 +30,10 @@ class SecondController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .green
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("SECOND  ViewController")
+    }
+    
 }

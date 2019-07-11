@@ -62,5 +62,10 @@ class OpeningController: UIViewController {
     @objc func pushToNextVC(){
         coordinator?.pushOpenVC_ToSetupTabCoordinator()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("OPENING ViewController")
+    }
 }
 

@@ -16,6 +16,17 @@ class BuyCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
+    func handleBack(){
+        navigationController.popViewController(animated: true)
+    }
+    
+    func handleForward(){
+        let child = FinalCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+    }
+    
     func start() {
         let vc = BuyViewController()
         vc.coordinator = self
@@ -26,33 +37,43 @@ class BuyCoordinator: Coordinator {
 
 class BuyViewController: UIViewController{
     weak var coordinator: BuyCoordinator?
+
+    enum ButtonTags: Int {case back = 0, forward, navigationBack}
+
+    var myButton = GenericButton(title: "Coord.handleBack", tab: ButtonTags.back.rawValue)
+    var myButton2 = GenericButton(title: "navigationController?.popViewController", tab: ButtonTags.navigationBack.rawValue)
+    var myButton3 = GenericButton(title: "FORWARD", tab: ButtonTags.forward.rawValue)
     
-    var myButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .blue
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("BACK BUTTON", for: .normal)
-        button.addTarget(self, action: #selector(handleMyButton), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+        @objc func handleAllButton(sender: UIButton){
+            switch sender.tag {
+            case ButtonTags.back.rawValue           : coordinator?.handleBack()
+            case ButtonTags.forward.rawValue        : coordinator?.handleForward()
+            case ButtonTags.navigationBack.rawValue : navigationController?.popViewController(animated: true)
+            default                                 :print("error")
+            }
+        }
     
-    @objc func handleMyButton(){
-        navigationController?.popViewController(animated: true)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("BUY ViewController")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "JIJIJ", style: .done, target: self, action: #selector(handleBack))
         view.addSubview(myButton)
+        view.addSubview(myButton2)
+        view.addSubview(myButton3)
+        [myButton, myButton2, myButton3].forEach{
+            view.addSubview($0)
+            $0.addTarget(self, action: #selector(handleAllButton(sender:)), for: .touchUpInside)
+        }
         NSLayoutConstraint.activate([
             myButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
+            myButton2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            myButton2.topAnchor.constraint(equalTo: myButton.bottomAnchor, constant: 20),
+            myButton3.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            myButton3.topAnchor.constraint(equalTo: myButton2.bottomAnchor, constant: 20)
             ])
-        print("First Controller Triggered")
-    }
-    
-    @objc func handleBack(){
-        navigationController?.popViewController(animated: true)
     }
 }
