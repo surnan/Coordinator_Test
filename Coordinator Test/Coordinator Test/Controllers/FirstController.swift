@@ -83,12 +83,3 @@ class FirstController: UIViewController{
     }
 }
 
-func GenericButton(title: String, tab: Int)->UIButton{
-    let button = UIButton()
-    button.setTitle(title, for: .normal)
-    button.backgroundColor = .blue
-    button.setTitleColor(.white, for: .normal)
-    button.tag = tab
-    button.translatesAutoresizingMaskIntoConstraints = false
-    return button
-}

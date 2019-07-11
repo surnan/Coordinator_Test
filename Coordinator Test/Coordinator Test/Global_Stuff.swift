@@ -14,3 +14,13 @@ protocol Coordinator: AnyObject { //AnyObject allows us to '==='
     func start()
 }
 
+
+func GenericButton(title: String, tab: Int)->UIButton{
+    let button = UIButton()
+    button.setTitle(title, for: .normal)
+    button.backgroundColor = .blue
+    button.setTitleColor(.white, for: .normal)
+    button.tag = tab
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+}
