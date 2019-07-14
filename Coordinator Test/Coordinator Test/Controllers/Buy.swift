@@ -7,9 +7,8 @@
 //
 import UIKit
 
-class BuyCoordinator: Coordinator {
+class BuyCoordinator: BaseCoordinator {
     weak var parentCoordinator: Coordinator?
-    var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -21,13 +20,16 @@ class BuyCoordinator: Coordinator {
     }
     
     func handleForward(){
-        let child = FinalCoordinator(navigationController: navigationController)
-        child.parentCoordinator = self
-        childCoordinators.append(child)
-        child.start()
+        let childCoord = FinalCoordinator(navigationController: navigationController)
+        childCoord.parentCoordinator = self
+        self.store(coordinator: childCoord)
+        childCoord.start()
+        childCoord.isComplete =  {[weak self] in
+            self?.free(coordinator: childCoord)
+        }
     }
     
-    func start() {
+    override func start() {
         let vc = BuyViewController()
         vc.coordinator = self
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)

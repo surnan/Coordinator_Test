@@ -8,16 +8,15 @@
 
 import UIKit
 
-class FinalCoordinator: Coordinator {
+class FinalCoordinator: BaseCoordinator {
     weak var parentCoordinator: Coordinator?
-    var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func start() {
+    override func start() {
         let vc = FinalViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)

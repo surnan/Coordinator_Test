@@ -7,28 +7,29 @@
 //
 import UIKit
 
-class FirstCoordinator: Coordinator {
+class FirstCoordinator: BaseCoordinator {
     weak var parentCoordinator      : Coordinator?
     var navigationController        : UINavigationController
-    var childCoordinators           = [Coordinator]()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func start() {
+    override func start() {
         let vc = FirstController()
         vc.coordinator = self
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         navigationController.pushViewController(vc, animated: false)
     }
     
-    //MARK:- Handlers
     func handleBuy(){
-        let child =  BuyCoordinator(navigationController: navigationController)
-        child.parentCoordinator = self
-        childCoordinators.append(child)
-        child.start()
+        let childCoord =  BuyCoordinator(navigationController: navigationController)
+        childCoord.parentCoordinator = self
+        self.store(coordinator: childCoord)
+        childCoord.start()
+        childCoord.isComplete =  {[weak self] in
+            self?.free(coordinator: childCoord)
+        }
     }
     
     func handleCreate(){
@@ -73,10 +74,6 @@ class FirstController: UIViewController{
             ])
         view.backgroundColor = .white
         print("FIRST ViewController")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
     }
 }
 

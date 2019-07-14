@@ -30,15 +30,16 @@ class AppCoordinator: BaseCoordinator {
         self.window = window
         super.init()
     }
+    
     override func start() {
         let navController = UINavigationController()
-        let coord = OpeningCoordinator(navigationController: navController)
-        self.store(coordinator: coord)
-        coord.start()
+        let openingCoord = OpeningCoordinator(navigationController: navController)
+        self.store(coordinator: openingCoord)
+        openingCoord.start()
         window.rootViewController = navController
         window.makeKeyAndVisible()
-        coord.isCompleted =  {[weak self] in
-            self?.free(coordinator: coord)
+        openingCoord.isCompleted =  {[weak self] in
+            self?.free(coordinator: openingCoord)
         }
     }
 }

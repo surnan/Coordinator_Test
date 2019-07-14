@@ -11,24 +11,26 @@ import UIKit
 class OpeningCoordinator: BaseCoordinator  {
     var navigationController: UINavigationController
     
-    var isCompleted: (()->())? 
+    var isCompleted: (()->())?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
+
     override func start(){
-        //navigationController.delegate = self
         let vc = OpeningController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func pushOpenVC_ToSetupTabCoordinator(){
-        let child = AnotherTabCoordinator(navigationController: navigationController)
-        child.parentCoordinator = self
-        childCoordinators.append(child)
-        child.start()
+    func handleNextBarButton(){
+        let childCoord = FirstCoordinator(navigationController: navigationController)
+        childCoord.parentCoordinator = self
+        self.store(coordinator: childCoord)
+        childCoord.start()
+        childCoord.isComplete =  {[weak self] in
+            self?.free(coordinator: childCoord)
+        }
     }
     
     func childDidFinish(_ child: Coordinator){
@@ -40,18 +42,6 @@ class OpeningCoordinator: BaseCoordinator  {
             }
         }
     }
-    
-    /*
-    //MARK:- UINavigationControllerDelegate
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        guard let fromVC = navigationController.transitionCoordinator?.viewController(forKey: .from) else {return}
-        //Checking if ViewController Array already contains from 'fromVC'
-        //YES = PUSH, NO = POP ... NavigationDelegate won't trigger for Present(vc, aniimated: true)
-        if navigationController.viewControllers.contains(fromVC) {
-            return      //Event = Push
-        }
-    }
-    */
 }
 
 class OpeningController: UIViewController {
@@ -59,11 +49,11 @@ class OpeningController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "NEXT", style: .done, target: self, action: #selector(pushToNextVC))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "NEXT", style: .done, target: self, action: #selector(nextBarButton))
     }
     
-    @objc func pushToNextVC(){
-        coordinator?.pushOpenVC_ToSetupTabCoordinator()
+    @objc func nextBarButton(){
+        coordinator?.handleNextBarButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -72,3 +62,21 @@ class OpeningController: UIViewController {
     }
 }
 
+
+//func handleNext(){
+//    let child = AnotherTabCoordinator(navigationController: navigationController)
+//    child.parentCoordinator = self
+//    childCoordinators.append(child)
+//    child.start()
+//
+//    //        let child = FirstCoordinator(navigationController: navigationController)
+//    //        child.parentCoordinator = self
+//    //        child.start()
+//}
+
+//func handleNext(){
+//    let child = AnotherTabCoordinator(navigationController: navigationController)
+//    child.parentCoordinator = self
+//    childCoordinators.append(child)
+//    child.start()
+//}
