@@ -7,16 +7,15 @@
 //
 import UIKit
 
-class SecondCoordinator: Coordinator {
+class SecondCoordinator: BaseCoordinator {
     weak var parentCoordinator      : Coordinator?
     var navigationController        : UINavigationController
-    var childCoordinators           = [Coordinator]()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func start() {
+    override func start() {
         let vc = SecondController()
         vc.coordinator = self
         vc.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)

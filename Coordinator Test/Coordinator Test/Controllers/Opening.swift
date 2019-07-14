@@ -24,6 +24,18 @@ class OpeningCoordinator: BaseCoordinator  {
     }
     
     func handleNextBarButton(){
+        let childCoord = SecondCoordinator(navigationController: navigationController)
+        childCoord.parentCoordinator = self
+        self.store(coordinator: childCoord)
+        childCoord.start()
+        childCoord.isComplete =  {[weak self] in
+            self?.free(coordinator: childCoord)
+        }
+    }
+    
+    /*
+    //FIRST COORDINATOR
+    func handleNextBarButton(){
         let childCoord = FirstCoordinator(navigationController: navigationController)
         childCoord.parentCoordinator = self
         self.store(coordinator: childCoord)
@@ -32,6 +44,9 @@ class OpeningCoordinator: BaseCoordinator  {
             self?.free(coordinator: childCoord)
         }
     }
+    */
+    
+    
     
     func childDidFinish(_ child: Coordinator){
         //Child Coordinator is done/complete/returned-to-parent
