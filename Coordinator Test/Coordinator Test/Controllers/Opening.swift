@@ -22,7 +22,19 @@ class OpeningCoordinator: BaseCoordinator  {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
+
     
+    func handleNextBarButton(){
+        let child = AnotherTabCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    
+    
+    /*
+    //SECOND COORDINATOR
     func handleNextBarButton(){
         let childCoord = SecondCoordinator(navigationController: navigationController)
         childCoord.parentCoordinator = self
@@ -32,7 +44,7 @@ class OpeningCoordinator: BaseCoordinator  {
             self?.free(coordinator: childCoord)
         }
     }
-    
+    */
     /*
     //FIRST COORDINATOR
     func handleNextBarButton(){
