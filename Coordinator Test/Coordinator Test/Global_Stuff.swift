@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol Coordinator: AnyObject { //AnyObject allows us to '==='
-    var childCoordinators: [Coordinator] {get set}
-    var navigationController: UINavigationController {get set}
-    func start()
-}
-
 
 func GenericButton(title: String, tab: Int)->UIButton{
     let button = UIButton()

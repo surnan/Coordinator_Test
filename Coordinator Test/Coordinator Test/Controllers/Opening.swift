@@ -8,16 +8,17 @@
 
 import UIKit
 
-class OpeningCoordinator: NSObject, UINavigationControllerDelegate, Coordinator {
-    var childCoordinators = [Coordinator]()
+class OpeningCoordinator: BaseCoordinator  {
     var navigationController: UINavigationController
+    
+    var isCompleted: (()->())? 
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func start(){
-        navigationController.delegate = self
+    override func start(){
+        //navigationController.delegate = self
         let vc = OpeningController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
@@ -40,6 +41,7 @@ class OpeningCoordinator: NSObject, UINavigationControllerDelegate, Coordinator 
         }
     }
     
+    /*
     //MARK:- UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         guard let fromVC = navigationController.transitionCoordinator?.viewController(forKey: .from) else {return}
@@ -49,6 +51,7 @@ class OpeningCoordinator: NSObject, UINavigationControllerDelegate, Coordinator 
             return      //Event = Push
         }
     }
+    */
 }
 
 class OpeningController: UIViewController {
