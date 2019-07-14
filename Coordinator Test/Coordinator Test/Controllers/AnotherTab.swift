@@ -8,10 +8,9 @@
 
 import UIKit
 
-class AnotherTabCoordinator: Coordinator {
+class AnotherTabCoordinator: BaseCoordinator {
     weak var parentCoordinator      : Coordinator?
     var navigationController        : UINavigationController
-    var childCoordinators           = [Coordinator]()
     
     var firstCoordinator            = FirstCoordinator(navigationController: UINavigationController())
     var secondCoordinator           = SecondCoordinator(navigationController: UINavigationController())
@@ -20,7 +19,7 @@ class AnotherTabCoordinator: Coordinator {
         self.navigationController   = navigationController
     }
     
-    func start() {
+    override func start() {
         firstCoordinator.parentCoordinator  = self
         secondCoordinator.parentCoordinator = self
         
